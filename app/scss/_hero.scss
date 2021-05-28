@@ -35,6 +35,8 @@
 
         &::before {
 
+           
+
             @include breakpoint-up(large) {
                 width: 150%;
                 background-size: 122%;
@@ -78,28 +80,6 @@
 
     &__text {
         text-align: center;
-
-        h1 {
-            font-weight: 300;
-            font-size: 2.5rem;
-            line-height: 1.15;
-            color: $darkBlue;
-            margin-bottom: 1.5rem;
-
-            @include breakpoint-up(large) {
-                font-size: $font-xlg;
-            }
-        }
-
-        p {
-            line-height: 1.5;
-            margin-bottom: 2.25rem;
-
-            @include breakpoint-up(large) {
-                font-size: $font-med;
-            }
-
-        }
 
         @include breakpoint-up(large) {
             flex: 2;
