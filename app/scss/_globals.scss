@@ -17,6 +17,7 @@ body {
     font-weight: 300;
     font-size: $font-med;
     color: $grayishBlue;
+    overflow-x: hidden;
     
     &.noscroll {
         overflow: hidden;
@@ -140,8 +141,9 @@ a:hover {
 button,
 .button {
     display: inline-block;
+    position: relative;
     padding: 0.875rem 2.1875rem;
-    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    background-image: linear-gradient(to right, $limeGreen, $brightCyan);
     font-weight: 400;
     border: 0;
     border-radius: 50px;
@@ -149,9 +151,23 @@ button,
     font-size: $font-sm;
     color: $white;
     transition: opacity 300ms ease-in-out;
+    overflow: hidden;
 
-    &:hover {
-        opacity: 0.75;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255,255,255,0.25);
+        ;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover::before {
+        opacity: 1;
     }
 }
 
